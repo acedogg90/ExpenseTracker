@@ -1,0 +1,14 @@
+Project Objectives
+    - Track book distribution expenses.
+        home will contain the dashborad displaying expenses. 
+    - Increase data security and availability. 
+        Create user login and authentication. 
+    - Customize and automate business processes.
+
+Your Challenge
+Your task is to do the following:
+    - Develop a CRUD* view to manage book categories (such as Business Analytics, Python, Data Science, and Math).
+        page for CRUD for authroized users. 
+    - Develop a CRUD* view to add book information such as the title, the author, the publishing date, the book category, and the distribution expenses. 
+    - Import existing data from spreadsheets to the web app.
+    - Develop a report view that enables the team to view the distribution expenses of books according to their categories.  
