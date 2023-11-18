@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Book Expense Tracking</h1>
+            <p class="lead">Welcome to the Book Expense Tracking App</p>
+            <p><a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Login</a> <a class="btn btn-primary btn-lg" href="{% url 'register' %}" role="button">Register</a></p>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'images/expense.jpg' %}" class="img-fluid">
+        </div>
+    </div>
+{% endblock %}

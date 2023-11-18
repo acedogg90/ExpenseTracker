@@ -1,0 +1,3 @@
+Expense tracker TO-DO List
+
+possibly use Plotly for python freamework to vreate interacvite web based visuations.
