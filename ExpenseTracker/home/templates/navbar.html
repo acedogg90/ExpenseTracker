@@ -10,7 +10,11 @@
           {% if user.is_authenticated %}
           
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'add_record' %}">Add Record</a>
+            <a class="nav-link" href="{% url 'book_list' %}">Book Expenses</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'add_book' %}">Add Record</a>
           </li>
 
           <li class="nav-item">
@@ -19,7 +23,7 @@
           
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'register' %}">Register</a>
+            <a class="nav-link" href="{% url 'register_user' %}">Register</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'index' %}">Login</a>

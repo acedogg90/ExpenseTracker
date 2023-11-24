@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        <strong>
+        {{ customer_record.first_name }}
+        {{ customer_record.last_name }}
+        </strong>
+    </div>
+    <div class="card-body">
+        <p class="card-text">
+            <!-- create a way to accept and update Book class -->
+            <strong>title:</strong>{{ book_list.title }}<br/>
+            <strong>subtitle:</strong>{{ book_list.subtitle }}<br/>
+            <strong>authors:</strong>{{ book_list.authors }}<br/>
+            <strong>publisher:</strong>{{ book_list.publisher }}<br/>
+            <strong>published_date:</strong>{{ book_list.published_date }}<br/>
+            <strong>category:</strong>{{ book_list.category }}<br/>
+            <strong>distribution_expense:</strong>{{ book_list.distribution_expense }}<br/>
+      
+      
+    </div>
+  </div>
+
+<br/>
+<a href="{% url 'index' %}" class="btn btn-secondary">Back</a>
+
+<a href="{% url 'delete_book' book_list.id %}" class="btn btn-danger">Delete</a>
+
+<a href="{% url 'update_book' book_list.id %}" class="btn btn-secondary">Update Record</a>
+
+{% endblock %}

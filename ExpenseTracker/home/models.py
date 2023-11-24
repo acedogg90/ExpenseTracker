@@ -10,7 +10,10 @@ class Book(models.Model):
     publisher = models.CharField(max_length=100)
     published_date = models.DateField(max_length=100)
     category = models.CharField(max_length=100)
-    distribution_expense = models.IntegerField()
+    distribution_expense = models.DecimalField(max_digits=5, decimal_places=2)
 
     def __str__(self):
-        return self.title
+        return(f"{self.title} {self.authors}")
+    
+    class Meta:
+        ordering = ['published_date']

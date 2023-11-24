@@ -7,11 +7,49 @@
     <div class="row">
         <div class="col-md-6">
             <h1>Book Expense Tracking</h1>
+            
+            {% if user.is_authenticated %}
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Book Title</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Publisher</th>
+                        <th scope="col">Published Date</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Distribution Expense</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for book_list in book_list %}
+                    <tr>
+                        <td>{{ book_list.title }}</td>
+                        <td>{{ book_list.authors }}</td>
+                        <td>{{ book_list.publisher }}</td>
+                        <td>{{ book_list.published_date }}</td>
+                        <td>{{ book_list.category }}</td>
+                        <td>{{ book_list.distribution_expense }}</td>
+                        <td>
+                            <a href="{% url 'delete_book' book_list.id %}" class="btn btn-danger">Delete</a>
+                            <a href="{% url 'update_book' book_list.id %}" class="btn btn-secondary">Update Record</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            
+            {% else %}
+
             <p class="lead">Welcome to the Book Expense Tracking App</p>
-            <p><a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Login</a> <a class="btn btn-primary btn-lg" href="{% url 'register' %}" role="button">Register</a></p>
+            <p><a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Login</a> <a class="btn btn-primary btn-lg" href="{% url 'register_user' %}" role="button">Register</a></p>
+            
+            {% endif %}
+
         </div>
         <div class="col-md-6">
-            <img src="{% static 'images/expense.jpg' %}" class="img-fluid">
+            
+           
         </div>
     </div>
-{% endblock %}
+{% endblock %} 
